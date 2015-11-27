@@ -6,7 +6,7 @@ module tmnProject {
     /** @ngInject */
     constructor(public d3HelperService: any) { }
 
-    public createScatterPlot(scope, d3, width, height, margin, data, ele, cssClass, parseDate, title) {
+    public createScatterPlot(scope, d3, width, height, margin, data, ele, cssClass, parseDate, title, yProp) {
       var x = d3.time.scale().range([0, width]);
 
       var y = d3.scale.linear()
@@ -39,7 +39,7 @@ module tmnProject {
       });
 
       x.domain(d3.extent(data, function(d) { return d.date; })).nice();
-      y.domain(d3.extent(data, function(d) { return d.ba; })).nice();
+      y.domain(d3.extent(data, function(d) { return d[yProp]; })).nice();
 
       var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -75,14 +75,14 @@ module tmnProject {
         .attr("class", "dot")
         .attr("r", 3.5)
         .attr("cx", function(d) { return x(d.date); })
-        .attr("cy", function(d) { return y(d.ba); })
+        .attr("cy", function(d) { return y(d[yProp]); })
         .style("fill", "green")
         .on("mouseover", function(d) {
           d3.select(this).style("fill", "orange");
           tooltip.transition()
             .duration(100)
             .style("opacity", .9);
-          tooltip.html(d.oldDate + "<br/>" + (d.ba))
+          tooltip.html(d.oldDate + "<br/>" + (d[yProp]))
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
         })

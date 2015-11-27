@@ -8,6 +8,7 @@ module tmnProject {
     public RBIs: number;
     public HRs: number;
     public battingAverageOverTime = [];
+    public RBIOverTime = [];
 
     /* @ngInject */
     constructor(private $stateParams: any, private BatterService: any) {
@@ -46,6 +47,7 @@ module tmnProject {
         }
         if (typeof game.RBI !== 'undefined') {
           RBIs += game.RBI;
+          this.RBIOverTime.push({ date: game.date, rbi: RBIs });
         }
       }
       this.battingAverage = hits / atBats;
