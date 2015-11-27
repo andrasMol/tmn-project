@@ -1,4 +1,5 @@
 # TMN Project
+Spending about 5 hours on the project didn't leave much time for making the page beautiful or very well designed. The user can select a batter and view some stats about them for the 2014 season. I show the important overall numbers in a table at the top and a couple of visualizations below to better understand the batter. 
 
 ##Seed
 I used the [gulp angular yo generator](https://github.com/Swiip/generator-gulp-angular) to get started.
