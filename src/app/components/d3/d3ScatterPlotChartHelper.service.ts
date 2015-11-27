@@ -67,13 +67,13 @@ module tmnProject {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Batting Average")
+        .text("Batting Average");
 
       svg.selectAll(".dot")
         .data(data)
         .enter().append("circle")
         .attr("class", "dot")
-        .attr("r", 3.5)
+        .attr("r", 5.5)
         .attr("cx", function(d) { return x(d.date); })
         .attr("cy", function(d) { return y(d[yProp]); })
         .style("fill", "green")
@@ -82,7 +82,7 @@ module tmnProject {
           tooltip.transition()
             .duration(100)
             .style("opacity", .9);
-          tooltip.html(d.oldDate + "<br/>" + (d[yProp]))
+          tooltip.html("Date: " + d.oldDate + "<br/>Value: " + (d[yProp]))
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -91,7 +91,7 @@ module tmnProject {
           tooltip.transition()
             .duration(500)
             .style("opacity", 0);
-        })
+        });
 
       svg.append("text")
         .attr("x", (width / 2))

@@ -13,22 +13,27 @@
     </div>
   </div>
 
-  <table class="table table-bordered overall-table">
-    <thead>
-      <tr>
-        <th>Batting AVG</th>
-        <th>RBIs</th>
-        <th>Home Runs</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{batter.battingAverage | number:3}}</td>
-        <td>{{batter.RBIs}}</td>
-        <td>{{batter.HRs}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>2014 Overall</h3>
+      <table class="table table-bordered overall-table">
+        <thead>
+          <tr>
+            <th>Batting AVG</th>
+            <th>RBIs</th>
+            <th>Home Runs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{batter.battingAverage | number:3}}</td>
+            <td>{{batter.RBIs}}</td>
+            <td>{{batter.HRs}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12">
