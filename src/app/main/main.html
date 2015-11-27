@@ -4,15 +4,15 @@
 
   <div ng-if="main.loading">Loading...</div>
 
-  <h1>Batters</h1>
+  <h1 class="overall-title">Batters</h1>
   <div ng-repeat="batter in main.battersData">
-    <div class="row">
+    <div class="row individual-batter">
       <a ui-sref="individualBatter({ batterId: batter.data.id })">
         <div class="col-md-1">
           <img ng-src="{{batter.data.image}}" class="profile-pic">
         </div>
         <div class="col-md-11">
-          <h1>{{batter.data.name}}</h1>
+          <h1 class="name">{{batter.data.name}}</h1>
         </div>
       </a>
     </div>
