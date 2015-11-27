@@ -15,8 +15,9 @@ module tmnProject {
       this.BatterService.getBatterData(this.$stateParams.batterId).then((result: any) => {
         this.loading = false;
         this.batterData = result.data;
-        console.log(this.batterData);
+        
         this.doCalculations();
+        console.log(this.batterData);
       }).catch((failure) => {
         console.log("error", failure);
       });
@@ -34,7 +35,7 @@ module tmnProject {
 
       for (var i = 0; i < this.batterData.games.length; i++) {
         var game = this.batterData.games[i];
-        if (typeof game.AB !== 'undefined' && typeof game.H !== 'undefined') {
+        if (typeof game.AB !== 'undefined' && typeof game.H !== 'undefined' && game.AB !== 0) {
           atBats += game.AB;
           hits += game.H;
           this.battingAverageOverTime.push({ date: game.date, ba: hits / atBats });

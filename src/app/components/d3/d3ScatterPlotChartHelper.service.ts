@@ -4,9 +4,9 @@ module tmnProject {
   export class d3ScatterPlotChartHelperService{
     
     /** @ngInject */
-    constructor(private d3HelperService: any) { }
+    constructor(public d3HelperService: any) { }
 
-    public createScatterPlot(d3, width, height, margin, data, ele, cssClass, parseDate, title) {
+    public createScatterPlot(scope, d3, width, height, margin, data, ele, cssClass, parseDate, title) {
       var x = d3.time.scale().range([0, width]);
 
       var y = d3.scale.linear()
@@ -27,6 +27,10 @@ module tmnProject {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      scope.$on('$destroy', () => {
+        this.d3HelperService.removeSVGOnDestroy(svg, d3);
+      });
 
       data.forEach(function(d) {
         d.date = parseDate(d.date);

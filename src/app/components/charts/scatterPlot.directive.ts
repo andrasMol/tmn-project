@@ -19,7 +19,7 @@ module tmnProject {
           var height = 600;
 
           var parseDate = d3.time.format("%Y-%m-%d").parse;
-          scope.sp.d3ScatterPlotChartHelperService.createScatterPlot(d3, width, height, margin, scope.sp.data, ele, 'scatter-plot', parseDate, "Scatter Plot");
+          scope.sp.d3ScatterPlotChartHelperService.createScatterPlot(scope, d3, width, height, margin, scope.sp.data, ele, 'scatter-plot', parseDate, "Scatter Plot");
         });
       },
       bindToController: true
