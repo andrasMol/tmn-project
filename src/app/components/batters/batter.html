@@ -1,0 +1,42 @@
+<div class="container batter">
+
+  <navbar></navbar>
+
+  <div ng-if="batter.loading">Loading, please wait</div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <img ng-src="{{batter.batterData.image}}" class="profile-pic">
+    </div>
+    <div class="col-md-11">
+      <h1>{{batter.batterData.name}}</h1>
+    </div>
+  </div>
+
+  <table class="table table-bordered overall-table">
+    <thead>
+      <tr>
+        <th>Batting AVG</th>
+        <th>RBIs</th>
+        <th>Home Runs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{batter.battingAverage | number:3}}</td>
+        <td>{{batter.RBIs}}</td>
+        <td>{{batter.HRs}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-md-12">
+      <scatter-plot data="batter.battingAverageOverTime"></scatter-plot>
+    </div>
+  </div>
+
+  
+  
+  
+</div>
