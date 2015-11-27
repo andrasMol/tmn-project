@@ -33,6 +33,7 @@ module tmnProject {
       });
 
       data.forEach(function(d) {
+        d.oldDate = d.date;
         d.date = parseDate(d.date);
       });
 
@@ -78,7 +79,7 @@ module tmnProject {
           tooltip.transition()
             .duration(100)
             .style("opacity", .9);
-              tooltip.html(d.date + "<br/>" + (d.ba))
+          tooltip.html(d.oldDate + "<br/>" + (d.ba))
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -88,25 +89,6 @@ module tmnProject {
             .duration(500)
             .style("opacity", 0);
         })
-
-      var legend = svg.selectAll(".legend")
-        .data(color.domain())
-        .enter().append("g")
-        .attr("class", "legend")
-        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-      legend.append("rect")
-        .attr("x", width - 18)
-        .attr("width", 18)
-        .attr("height", 18)
-        .style("fill", color);
-
-      legend.append("text")
-        .attr("x", width - 24)
-        .attr("y", 9)
-        .attr("dy", ".35em")
-        .style("text-anchor", "end")
-        .text(function(d) { return d; });
 
     }
 

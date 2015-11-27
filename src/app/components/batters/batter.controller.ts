@@ -38,7 +38,8 @@ module tmnProject {
         if (typeof game.AB !== 'undefined' && typeof game.H !== 'undefined' && game.AB !== 0) {
           atBats += game.AB;
           hits += game.H;
-          this.battingAverageOverTime.push({ date: game.date, ba: hits / atBats });
+          var cumulativeAvg = hits / atBats;
+          this.battingAverageOverTime.push({ date: game.date, ba: cumulativeAvg.toFixed(3) });
         }
         if (typeof game.HR !== 'undefined') {
           HRs += game.HR;
