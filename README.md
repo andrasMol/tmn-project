@@ -31,3 +31,4 @@ I chose to use typescript for a number of reasons, first and foremost that angul
 
 ##Future Work
 * Need to write unit tests -- not much to test on the front-end right now
+* Need to write scenario (e2e) tests as well

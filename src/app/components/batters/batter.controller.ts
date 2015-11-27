@@ -7,8 +7,12 @@ module tmnProject {
     public battingAverage: number;
     public RBIs: number;
     public HRs: number;
+    public ABs: number;
+    public Hs: number;
     public battingAverageOverTime = [];
     public RBIOverTime = [];
+    public atBatsOverTime = [];
+    public margin = { top: 20, right: 80, bottom: 30, left: 50 };
 
     /* @ngInject */
     constructor(private $stateParams: any, private BatterService: any) {
@@ -18,7 +22,6 @@ module tmnProject {
         this.batterData = result.data;
         
         this.doCalculations();
-        console.log(this.batterData);
       }).catch((failure) => {
         console.log("error", failure);
       });
@@ -41,6 +44,7 @@ module tmnProject {
           hits += game.H;
           var cumulativeAvg = hits / atBats;
           this.battingAverageOverTime.push({ date: game.date, ba: cumulativeAvg.toFixed(3) });
+          this.atBatsOverTime.push({ date: game.date, ab: game.AB });
         }
         if (typeof game.HR !== 'undefined') {
           HRs += game.HR;
@@ -53,7 +57,8 @@ module tmnProject {
       this.battingAverage = hits / atBats;
       this.HRs = HRs;
       this.RBIs = RBIs;
-      console.log(this.battingAverageOverTime);
+      this.ABs = atBats;
+      this.Hs = hits;
     }
   }
 }

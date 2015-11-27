@@ -22,13 +22,17 @@
             <th>Batting AVG</th>
             <th>RBIs</th>
             <th>Home Runs</th>
+            <th>Hits</th>
+            <th>At Bats</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{{batter.battingAverage | number:3}}</td>
+            <td>{{batter.battingAverage | number: 3}}</td>
             <td>{{batter.RBIs}}</td>
             <td>{{batter.HRs}}</td>
+            <td>{{batter.Hs}}</td>
+            <td>{{batter.ABs}}</td>
           </tr>
         </tbody>
       </table>
@@ -37,8 +41,12 @@
 
   <div class="row">
     <div class="col-md-12">
-      <batting-average data="batter.battingAverageOverTime" class="scatter-plot"></batting-average>
-      <rbi-over-time data="batter.RBIOverTime" class="scatter-plot"></rbi-over-time>
+      <scatter-plot data="batter.battingAverageOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Batting Average Over Time'" y-prop="'ba'" class="scatter-plot"></scatter-plot>
+      <hr>
+      <scatter-plot data="batter.RBIOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Cumulative 
+      RBIs Over Time'" y-prop="'rbi'" class="scatter-plot"></scatter-plot>
+      <hr>
+      
     </div>
   </div>
   

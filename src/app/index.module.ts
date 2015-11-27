@@ -9,8 +9,7 @@
 /// <reference path="../app/components/batters/batter.controller.ts" />
 /// <reference path="../app/components/batters/batter.service.ts" />
 /// <reference path="../app/components/navbar/navbar.directive.ts" />
-/// <reference path="../app/components/charts/battingAverage.directive.ts" />
-/// <reference path="../app/components/charts/rbi-over-time.directive.ts" />
+/// <reference path="../app/components/charts/scatter-plot.directive.ts" />
 /// <reference path="../app/components/d3/d3.service.ts" />
 /// <reference path="../app/components/d3/d3ScatterPlotChartHelper.service.ts" />
 /// <reference path="../app/components/d3/d3Helper.service.ts" />
@@ -28,6 +27,5 @@ module tmnProject {
       .controller('MainController', MainController)
       .controller('BatterController', BatterController)
       .directive('navbar', navbar)
-      .directive('rbiOverTime', rbiOverTime)
-      .directive('battingAverage', battingAverage);
+      .directive('scatterPlot', scatterPlot);
 }
