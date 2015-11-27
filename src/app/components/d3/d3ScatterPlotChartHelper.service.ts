@@ -22,9 +22,10 @@ module tmnProject {
         .scale(y)
         .orient("left");
 
-      var svg = d3.select("body").append("svg")
+      var svg = d3.select(ele[0]).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .attr("class", cssClass)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -44,6 +45,7 @@ module tmnProject {
         .attr("class", "tooltip")
         .style("opacity", 0);
 
+      //x axis
       svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -55,6 +57,7 @@ module tmnProject {
         .style("text-anchor", "end")
         .text("Date");
 
+      //y axis
       svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
@@ -90,8 +93,14 @@ module tmnProject {
             .style("opacity", 0);
         })
 
-    }
+      svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 20 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "2rem")
+        .text(title);
 
+    }
     
   }
 }

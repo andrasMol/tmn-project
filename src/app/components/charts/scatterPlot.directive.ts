@@ -15,11 +15,11 @@ module tmnProject {
         scope.sp.d3Service.d3().then(d3 => {
           
           var margin = { top: 20, right: 80, bottom: 30, left: 50 };
-          var width = 900;
-          var height = 600;
+          var width = ele.parent().width() - margin.left - margin.right;
+          var height = 300;
 
           var parseDate = d3.time.format("%Y-%m-%d").parse;
-          scope.sp.d3ScatterPlotChartHelperService.createScatterPlot(scope, d3, width, height, margin, scope.sp.data, ele, 'scatter-plot', parseDate, "Scatter Plot");
+          scope.sp.d3ScatterPlotChartHelperService.createScatterPlot(scope, d3, width, height, margin, scope.sp.data, ele, 'scatter-plot', parseDate, "Batting Average Over Time");
         });
       },
       bindToController: true

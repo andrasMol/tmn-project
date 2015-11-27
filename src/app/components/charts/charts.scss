@@ -3,11 +3,13 @@
   .axis line {
     fill: none;
     stroke: #000;
+    stroke-width: .1rem;
     shape-rendering: crispEdges;
   }
 
   .dot {
     stroke: #000;
+    cursor: pointer;
   }
 }
 
