@@ -41,10 +41,9 @@
 
   <div class="row">
     <div class="col-md-12">
-      <scatter-plot data="batter.battingAverageOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Batting Average Over Time'" y-prop="'ba'" class="scatter-plot"></scatter-plot>
+      <scatter-plot ng-if="!batter.loading" data="batter.battingAverageOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Batting Average Over Time'" y-prop="'ba'" class="scatter-plot"></scatter-plot>
       <div class="line"></div>
-      <scatter-plot data="batter.RBIOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Cumulative 
-      RBIs Over Time'" y-prop="'rbi'" class="scatter-plot"></scatter-plot>
+      <scatter-plot ng-if="!batter.loading" data="batter.RBIOverTime" parse-date="'%Y-%m-%d'" height="300" margin="batter.margin" title="'Cumulative RBIs Over Time'" y-prop="'rbi'" class="scatter-plot"></scatter-plot>
       
     </div>
   </div>

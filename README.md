@@ -19,6 +19,11 @@ bower install
 ```
 gulp serve
 ```
+##### To run unit tests
+```
+karma start
+```
+
 ##### Then navigate to `localhost:3000`
 
 ##Visualization Explanation
@@ -31,5 +36,5 @@ Another standard scatter plot showing the total number of RBIs the batter had up
 I chose to use typescript for a number of reasons, first and foremost that angular 2.0 is being written in typescript and looking at a lot of what has come out of the latest ng-conf conferences, a lot of people are using typescript to write their angular apps to ease migration. The syntax is very similar (it's just a superset of javascript), and offers a few syntactic goodies (types, lambda syntax for functions, etc...) that may be used if it helps.
 
 ##Future Work
-* Need to write unit tests -- not much to test on the front-end right now
+* There are a few TODO's in the code listed
 * Need to write scenario (e2e) tests as well
