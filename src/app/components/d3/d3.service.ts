@@ -1,5 +1,5 @@
 angular.module('d3', [])
-
+  // this allows the page to load in d3 only when actually required
   .factory('d3Service', ['$document', '$q', '$rootScope', '$window',
     function($document, $q, $rootScope, $window) {
 
