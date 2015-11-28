@@ -1,6 +1,6 @@
 # TMN Project
-Spending about 5 hours on the project didn't leave much time for making the page beautiful or very well designed. The user can select a batter and view some stats about them for the 2014 season. I show the important overall numbers in a table at the top and a couple of visualizations below to better understand the batter. 
-
+ On the main page, the user can select a batter and view some stats about them for the 2014 season. I show the important overall numbers in a table at the top and a couple of visualizations below to better understand the batter. 
+ 
 I created an extra json file called batters.json which lists the 3 batters with their id, name and image thumbnail. This allows the main page to simply call this json file (very small, as opposed to the individual batter json files which have lots of data in them) and to show the batters found in the file. I took this liberty with the project as none of the other solutions would be very scalable. Creating this batters.json file using a small script would be pretty easy if the given dataset didn't include it.
 
 ##Seed
